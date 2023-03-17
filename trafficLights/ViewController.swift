@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var redLight: UIView!
     @IBOutlet weak var greenLight: UIView!
     @IBOutlet weak var nextButton: UIButton!
+    var currentLight = "red"
     
     private func rounded(view: UIView) {
         view.layer.cornerRadius = 75
@@ -34,10 +35,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         nextButton.layer.cornerRadius = 20
-        
     }
     
     @IBAction func switcLights(_ sender: UIButton) {
+        nextButton.setTitle("NEXT", for: .normal)
         
+        if currentLight == "red" {
+            redLight.alpha = 1
+            yellowLight.alpha = 0.3
+            greenLight.alpha = 0.3
+            currentLight = "yellow"
+        } else if currentLight == "yellow" {
+            redLight.alpha = 0.3
+            yellowLight.alpha = 1
+            greenLight.alpha = 0.3
+            currentLight = "green"
+        } else {
+            redLight.alpha = 0.3
+            yellowLight.alpha = 0.3
+            greenLight.alpha = 1
+            currentLight = "red"
+        }
     }
 }
