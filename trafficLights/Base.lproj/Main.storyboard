@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -50,14 +50,14 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
                         <constraints>
                             <constraint firstItem="FrM-Bx-Jhq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.57109" id="KhZ-BW-Hat"/>
-                            <constraint firstItem="LC9-Xt-mbE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NM0-bf-fch"/>
                             <constraint firstItem="FrM-Bx-Jhq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XXd-Uk-FGt"/>
                             <constraint firstItem="FrM-Bx-Jhq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.384615" id="lRz-32-raV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LC9-Xt-mbE" secondAttribute="bottom" multiplier="5:4" id="qFw-Cq-dNE"/>
                             <constraint firstItem="LC9-Xt-mbE" firstAttribute="top" secondItem="FrM-Bx-Jhq" secondAttribute="bottom" constant="56" id="rXj-x5-UpP"/>
+                            <constraint firstItem="LC9-Xt-mbE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xTs-Bj-0pf"/>
                         </constraints>
                     </view>
                     <connections>
@@ -76,8 +76,8 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
