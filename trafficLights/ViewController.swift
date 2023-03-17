@@ -12,7 +12,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var redLight: UIView!
     @IBOutlet weak var greenLight: UIView!
     @IBOutlet weak var nextButton: UIButton!
-    var currentLight = "red"
+    
+    private var currentLight = "red"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+        
+    @IBAction func switcLights(_ sender: UIButton) {
+        sender.setTitle("NEXT", for: .normal)
+        
+        switch currentLight {
+        case "red":
+            redLight.alpha = 1
+            yellowLight.alpha = 0.3
+            greenLight.alpha = 0.3
+            currentLight = "yellow"
+        case "yellow":
+            redLight.alpha = 0.3
+            yellowLight.alpha = 1
+            greenLight.alpha = 0.3
+            currentLight = "green"
+        case "green":
+            redLight.alpha = 0.3
+            yellowLight.alpha = 0.3
+            greenLight.alpha = 1
+            currentLight = "red"
+        default:
+            break
+        }
+    }
     
     private func rounded(view: UIView) {
         view.layer.cornerRadius = 75
@@ -30,31 +60,5 @@ class ViewController: UIViewController {
         changeOfBrightness(view: redLight)
         changeOfBrightness(view: greenLight)
         nextButton.layer.cornerRadius = 20
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
-    }
-    
-    @IBAction func switcLights(_ sender: UIButton) {
-        sender.setTitle("NEXT", for: .normal)
-        
-        if currentLight == "red" {
-            redLight.alpha = 1
-            yellowLight.alpha = 0.3
-            greenLight.alpha = 0.3
-            currentLight = "yellow"
-        } else if currentLight == "yellow" {
-            redLight.alpha = 0.3
-            yellowLight.alpha = 1
-            greenLight.alpha = 0.3
-            currentLight = "green"
-        } else {
-            redLight.alpha = 0.3
-            yellowLight.alpha = 0.3
-            greenLight.alpha = 1
-            currentLight = "red"
-        }
     }
 }
