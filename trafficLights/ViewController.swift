@@ -29,16 +29,16 @@ class ViewController: UIViewController {
         changeOfBrightness(view: yellowLight)
         changeOfBrightness(view: redLight)
         changeOfBrightness(view: greenLight)
+        nextButton.layer.cornerRadius = 20
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        nextButton.layer.cornerRadius = 20
     }
     
     @IBAction func switcLights(_ sender: UIButton) {
-        nextButton.setTitle("NEXT", for: .normal)
+        sender.setTitle("NEXT", for: .normal)
         
         if currentLight == "red" {
             redLight.alpha = 1
