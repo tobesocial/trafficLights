@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var yellowLight: UIView!
     @IBOutlet weak var redLight: UIView!
     @IBOutlet weak var greenLight: UIView!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var lightSwitchButton: UIButton!
     
     private var currentLight = "red"
     
@@ -20,8 +20,8 @@ class ViewController: UIViewController {
         setupView()
     }
         
-    @IBAction func switcLights(_ sender: UIButton) {
-        sender.setTitle("NEXT", for: .normal)
+    @IBAction func switchLightWasPressed() {
+        lightSwitchButton.setTitle("NEXT", for: .normal)
         
         switch currentLight {
         case "red":
@@ -59,6 +59,6 @@ class ViewController: UIViewController {
         changeOfBrightness(view: yellowLight)
         changeOfBrightness(view: redLight)
         changeOfBrightness(view: greenLight)
-        nextButton.layer.cornerRadius = 20
+        lightSwitchButton.layer.cornerRadius = 20
     }
 }
