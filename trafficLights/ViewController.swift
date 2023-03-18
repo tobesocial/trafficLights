@@ -13,7 +13,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenLight: UIView!
     @IBOutlet weak var lightSwitchButton: UIButton!
     
-    private var currentLight = "red"
+    private enum ColorLight {
+        case red
+        case yellow
+        case green
+    }
+    
+    private var currentLight: ColorLight = .red
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,30 +28,28 @@ class ViewController: UIViewController {
         
     @IBAction func switchLightWasPressed() {
         lightSwitchButton.setTitle("NEXT", for: .normal)
-        
+    
         switch currentLight {
-        case "red":
+        case .red:
             redLight.alpha = 1
             yellowLight.alpha = 0.3
             greenLight.alpha = 0.3
-            currentLight = "yellow"
-        case "yellow":
+            currentLight = .yellow
+        case .yellow:
             redLight.alpha = 0.3
             yellowLight.alpha = 1
             greenLight.alpha = 0.3
-            currentLight = "green"
-        case "green":
+            currentLight = .green
+        case .green:
             redLight.alpha = 0.3
             yellowLight.alpha = 0.3
             greenLight.alpha = 1
-            currentLight = "red"
-        default:
-            break
+            currentLight = .red
         }
     }
     
     private func rounded(view: UIView) {
-        view.layer.cornerRadius = 75
+        view.layer.cornerRadius = view.frame.width / 2
     }
     
     private func changeOfBrightness(view: UIView) {
